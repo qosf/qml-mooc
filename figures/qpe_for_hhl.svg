@@ -14,7 +14,7 @@
    version="1.1"
    id="svg2004"
    sodipodi:docname="qpe_for_hhl.svg"
-   inkscape:version="0.92.2 2405546, 2018-03-11">
+   inkscape:version="0.92.3 (2405546, 2018-03-11)">
   <metadata
      id="metadata2008">
     <rdf:RDF>
@@ -23,7 +23,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -36,15 +36,15 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="3440"
-     inkscape:window-height="1440"
+     inkscape:window-width="1920"
+     inkscape:window-height="1080"
      id="namedview2006"
      showgrid="false"
-     inkscape:zoom="1.7646791"
-     inkscape:cx="-81.165393"
-     inkscape:cy="198.53834"
-     inkscape:window-x="-1"
-     inkscape:window-y="-2"
+     inkscape:zoom="1.2478166"
+     inkscape:cx="252.56261"
+     inkscape:cy="249.7896"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg2004"
      fit-margin-top="0"
