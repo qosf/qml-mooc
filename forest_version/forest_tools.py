@@ -1,6 +1,7 @@
 import cmath
 import itertools
 import matplotlib.pyplot as plt
+import numpy as np
 import shutil
 import socket
 import subprocess
