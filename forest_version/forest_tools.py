@@ -31,8 +31,6 @@ def init_qvm_and_quilc(qvm_executable="qvm", quilc_executable="quilc"):
 
 def plot_circuit(program):
     latex_diagram = to_latex(program)
-    prefix = "\\documentclass[convert={density=300,outext=.png}]"
-    latex_diagram = prefix + latex_diagram[14:]
     tmp_folder = mkdtemp()
     with open(tmp_folder + '/circuit.tex', 'w') as f:
         f.write(latex_diagram)
