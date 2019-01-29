@@ -53,3 +53,7 @@ Python and a good command of linear algebra are necessary. Experience with machi
 13_Quantum_Phase_Estimation.ipynb
 
 14_Quantum_Matrix_Inversion.ipynb
+
+# Contributing
+
+We welcome contributions - simply fork the repository, and then make a pull request containing your contribution. We would especially love to see the course extended to other open source quantum computing frameworks. We also encourage bug reports and suggestions for enhancements.
