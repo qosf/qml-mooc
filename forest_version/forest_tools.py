@@ -29,8 +29,8 @@ def init_qvm_and_quilc(qvm_executable="qvm", quilc_executable="quilc"):
     return qvm_server, quilc_server, fc
 
 
-def plot_circuit(program):
-    latex_diagram = to_latex(program)
+def plot_circuit(circuit):
+    latex_diagram = to_latex(circuit)
     tmp_folder = mkdtemp()
     with open(tmp_folder + '/circuit.tex', 'w') as f:
         f.write(latex_diagram)
@@ -83,7 +83,7 @@ def get_vector(alpha, beta):
         y = cmath.sin(theta)*cmath.sin(phi)
         z = cmath.cos(theta)
 
-    return [x.real,y.real,z.real]
+    return [x.real, y.real, z.real]
 
 
 def plot_quantum_state(amplitudes):
@@ -97,15 +97,17 @@ def plot_quantum_state(amplitudes):
     bloch_sphere.clear()
 
 
-def plot_histogram(results):
-    trials = len(results[0])
-    n_qubits = len(results)
+def plot_histogram(result):
+    if isinstance(result, dict):
+        outcomes = np.vstack(result.values()).T
+    else:
+        outcomes = result
+    trials, classical_bits = outcomes.shape
     stats = {}
-    for bits in itertools.product('01', repeat=n_qubits):
+    for bits in itertools.product('01', repeat=classical_bits):
         stats["".join(str(bit) for bit in bits)] = 0
-    outcomes = np.vstack(results.values())
     for i in range(trials):
-        stats["".join(str(bit) for bit in outcomes[:, i])] += 1
+        stats["".join(str(bit) for bit in outcomes[i])] += 1
     x = np.arange(len(stats))
     plt.bar(x, stats.values())
     plt.xticks(x, stats.keys())
