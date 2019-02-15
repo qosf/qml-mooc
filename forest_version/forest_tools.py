@@ -99,7 +99,7 @@ def plot_quantum_state(amplitudes):
 
 def plot_histogram(result):
     if isinstance(result, dict):
-        outcomes = np.vstack(result.values()).T
+        outcomes = np.flip(np.vstack(result.values()).T)
     else:
         outcomes = result
     trials, classical_bits = outcomes.shape
