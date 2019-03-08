@@ -54,6 +54,10 @@ Python and a good command of linear algebra are necessary. Experience with machi
 
 14_Quantum_Matrix_Inversion.ipynb
 
+# Assignments
+
+The assignments are included, but without the solutions. The master version is developed in a separate private repository. If you are an interested in using them for your own lectures, please contact us to give you access.
+
 # Contributing
 
 We welcome contributions - simply fork the repository, and then make a pull request containing your contribution. We would especially love to see the course extended to other open source quantum computing frameworks. We also encourage bug reports and suggestions for enhancements.
