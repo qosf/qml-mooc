@@ -1,5 +1,6 @@
 import itertools
 import numpy as np
+import scipy
 import socket
 import subprocess
 from pyquil.api import ForestConnection
@@ -131,6 +132,7 @@ if __name__ == "__main__":
         is_forest = False
     try:
         import qiskit
+        import qiskit_aqua
         from qiskit import QuantumCircuit, ClassicalRegister, QuantumRegister
         from qiskit import execute, BasicAer
         from qiskit.quantum_info import Pauli
