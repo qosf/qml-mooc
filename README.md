@@ -16,11 +16,15 @@ Python and a good command of linear algebra are necessary. Experience with machi
 
 00_Course_Introduction.ipynb
 
+00_Introduction_to_Cirq.ipynb
+
 00_Introduction_to_Qiskit.ipynb
 
 00_Introduction_to_the_Forest_SDK.ipynb
 
 **Module 1: Quantum Systems**
+
+01_Classical_and_Quantum_Probability_Distributions.ipynb
 
 02_Measurements_and_Mixed_States.ipynb
 
