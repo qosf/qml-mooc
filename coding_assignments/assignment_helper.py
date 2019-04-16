@@ -3,7 +3,6 @@ import numpy as np
 import scipy
 import socket
 import subprocess
-from pyquil.api import ForestConnection
 
 
 def get_free_port():
@@ -115,7 +114,7 @@ if __name__ == "__main__":
         from grove.pyvqe import vqe
         from pyquil import Program, get_qc
         from pyquil.paulis import PauliSum, PauliTerm, exponential_map, sZ
-        from pyquil.api import WavefunctionSimulator
+        from pyquil.api import WavefunctionSimulator, ForestConnection
         from pyquil.gates import *
         try:
             qvm_server, quilc_server, fc = init_qvm_and_quilc()
