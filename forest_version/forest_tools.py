@@ -23,9 +23,9 @@ def init_qvm_and_quilc(qvm_executable="qvm", quilc_executable="quilc"):
     qvm_port = get_free_port()
     quilc_port = get_free_port()
     qvm_server = subprocess.Popen([qvm_executable, "-S", "-p", str(qvm_port)])
-    quilc_server = subprocess.Popen([quilc_executable, "-S", "-p", str(quilc_port)])
+    quilc_server = subprocess.Popen([quilc_executable, "-R", "-p", str(quilc_port)])
     fc = ForestConnection(sync_endpoint='http://127.0.0.1:' + str(qvm_port),
-                          compiler_endpoint='http://127.0.0.1:' + str(quilc_port))
+                          compiler_endpoint='tcp://127.0.0.1:' + str(quilc_port))
     return qvm_server, quilc_server, fc
 
 
