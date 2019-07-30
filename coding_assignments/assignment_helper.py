@@ -18,16 +18,16 @@ def init_qvm_and_quilc(qvm_executable="qvm", quilc_executable="quilc"):
     qvm_port = get_free_port()
     quilc_port = get_free_port()
     qvm_server = subprocess.Popen([qvm_executable, "-S", "-p", str(qvm_port)])
-    quilc_server = subprocess.Popen([quilc_executable, "-S", "-p", str(quilc_port)])
+    quilc_server = subprocess.Popen([quilc_executable, "-R", "-p", str(quilc_port)])
     fc = ForestConnection(sync_endpoint='http://127.0.0.1:' + str(qvm_port),
-                          compiler_endpoint='http://127.0.0.1:' + str(quilc_port))
+                          compiler_endpoint='tcp://127.0.0.1:' + str(quilc_port))
     time.sleep(5)
     return qvm_server, quilc_server, fc
 
 
 def get_amplitudes(circuit):
     if isinstance(circuit, qiskit.circuit.quantumcircuit.QuantumCircuit):
-        backend = BasicAer.get_backend('statevector_simulator')
+        backend = Aer.get_backend('statevector_simulator')
         job = execute(circuit, backend)
         amplitudes = job.result().get_statevector(circuit)
     elif isinstance(circuit, pyquil.quil.Program):
@@ -41,7 +41,7 @@ def get_amplitudes(circuit):
 
 def get_counts(circuit, num_shots=100):
     if isinstance(circuit, qiskit.circuit.quantumcircuit.QuantumCircuit):
-        backend = BasicAer.get_backend('qasm_simulator')
+        backend = Aer.get_backend('qasm_simulator')
         job = execute(circuit, backend, shots=num_shots)
         result = job.result()
         counts = result.get_counts(circuit)
@@ -64,7 +64,7 @@ def get_counts(circuit, num_shots=100):
 
 def get_single_measurement_counts(circuit, num_shots=100):
     if isinstance(circuit, qiskit.circuit.quantumcircuit.QuantumCircuit):
-        backend = BasicAer.get_backend('qasm_simulator')
+        backend = Aer.get_backend('qasm_simulator')
         job = execute(circuit, backend, shots=num_shots)
         result = job.result()
         counts = result.get_counts(circuit)
@@ -133,12 +133,12 @@ if __name__ == "__main__":
         is_forest = False
     try:
         import qiskit
-        import qiskit_aqua
+        import qiskit.aqua
         from qiskit import QuantumCircuit, ClassicalRegister, QuantumRegister
-        from qiskit import execute, BasicAer
+        from qiskit import execute, Aer
         from qiskit.quantum_info import Pauli
-        from qiskit_aqua import Operator, get_aer_backend
-        from qiskit_aqua.components.initial_states import Custom
+        from qiskit.aqua import Operator, get_aer_backend
+        from qiskit.aqua.components.initial_states import Custom
         is_qiskit = True
     except ImportError:
         is_qiskit = False
