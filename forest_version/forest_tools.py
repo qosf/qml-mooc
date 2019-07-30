@@ -5,6 +5,7 @@ import numpy as np
 import shutil
 import socket
 import subprocess
+import time
 from pyquil.api import ForestConnection
 from pyquil.latex import to_latex
 from qutip import Bloch
@@ -26,6 +27,7 @@ def init_qvm_and_quilc(qvm_executable="qvm", quilc_executable="quilc"):
     quilc_server = subprocess.Popen([quilc_executable, "-R", "-p", str(quilc_port)])
     fc = ForestConnection(sync_endpoint='http://127.0.0.1:' + str(qvm_port),
                           compiler_endpoint='tcp://127.0.0.1:' + str(quilc_port))
+    time.sleep(5)
     return qvm_server, quilc_server, fc
 
 
