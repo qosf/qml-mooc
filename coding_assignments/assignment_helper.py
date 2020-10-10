@@ -141,8 +141,7 @@ if __name__ == "__main__":
         except ImportError:
             from qiskit import BasicAer as Aer
         from qiskit.quantum_info import Pauli
-        from qiskit.aqua import Operator, get_aer_backend
-        from qiskit.aqua.components.initial_states import Custom
+        from qiskit.aqua.operators import *
         is_qiskit = True
     except ImportError:
         is_qiskit = False
