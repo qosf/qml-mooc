@@ -1,0 +1,2 @@
+cirq-core==1.3.0
+cirq_google==1.3.0
